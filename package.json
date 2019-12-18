@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
+    "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,9 +19,7 @@
   },
   "homepage": "https://github.com/ByPassaRe/Pick-a-Park-Smart-API#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.0.2",
-    "sequelize": "^5.21.3"
+    "express": "^4.17.1"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
