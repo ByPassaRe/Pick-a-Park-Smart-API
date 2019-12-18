@@ -9,6 +9,13 @@ const saveUser = (data) => {
   return user.save();
 };
 
+const getAll = () => {
+  const users = User.find();
+  return users;
+};
+
+
 module.exports = {
   saveUser,
+  getAll,
 };
