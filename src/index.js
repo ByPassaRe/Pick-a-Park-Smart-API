@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 
 const userRoute = require('./user/user.router');
 
 const app = express();
+app.use(helmet());
 app.use(bodyParser.json());
 app.use('/users', userRoute);
 app.get('/', (req, res) => res.send('Hello World!'));
