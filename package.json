@@ -2,8 +2,9 @@
   "name": "pick-a-park-smart-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
+    "dev": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/ByPassaRe/Pick-a-Park-Smart-API/issues"
   },
-  "homepage": "https://github.com/ByPassaRe/Pick-a-Park-Smart-API#readme"
+  "homepage": "https://github.com/ByPassaRe/Pick-a-Park-Smart-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.0.2",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "nodemon": "^2.0.2"
+  }
 }
