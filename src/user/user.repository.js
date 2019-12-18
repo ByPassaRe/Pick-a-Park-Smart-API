@@ -4,18 +4,25 @@ const moongose = require('mongoose');
 
 const User = moongose.model('User');
 
-const saveUser = (data) => {
+exports.saveUser = async (data) => {
   const user = new User(data);
-  return user.save();
+  let savedUser;
+  try {
+    savedUser = await user.save();
+  } catch (err) {
+    throw new Error('Username with same username or email already exists');
+  }
+  return savedUser;
 };
 
-const getAll = () => {
-  const users = User.find();
+exports.getAll = async () => {
+  const users = await User.find();
   return users;
 };
 
-
-module.exports = {
-  saveUser,
-  getAll,
+exports.deleteUser = async (username) => {
+  const result = await User.deleteOne({ username });
+  if (result.deletedCount === 0) {
+    throw new Error('User not found');
+  }
 };

@@ -5,10 +5,19 @@ exports.register = async (req, res) => {
     const savedUser = await UserRepository.saveUser(req.body);
     res.send(savedUser);
   } catch (err) {
-    res.sendStatus(500);
+    res.sendStatus(409);
   }
 };
 
 exports.getAll = async (req, res) => {
   res.send(await UserRepository.getAll());
+};
+
+exports.delete = async (req, res) => {
+  try {
+    await UserRepository.deleteUser(req.params.username);
+    res.sendStatus(200);
+  } catch (err) {
+    res.sendStatus(404);
+  }
 };
