@@ -1,0 +1,29 @@
+//https://github.com/nestjsx/crud/wiki/Requests#query-params
+
+@baseurl = http://localhost:3000
+
+GET {{baseurl}}/ HTTP/1.1
+
+###
+
+POST {{baseurl}}/users HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Corrado",
+    "lastName": "Petrelli",
+    "username": "corrado.petrelli",
+    "password": "aldoaldoaldo",
+    "balance": 100.2
+}
+
+### 
+GET {{baseurl}}/users HTTP/1.1
+
+###
+
+DELETE {{baseurl}}/users/3 HTTP/1.1
+
+###
+
+PUT {{baseurl}}/users/5/balance/10 HTTP/1.1
