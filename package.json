@@ -1,0 +1,19 @@
+{
+  "name": "pick-a-park-smart-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ByPassaRe/Pick-a-Park-Smart-API.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ByPassaRe/Pick-a-Park-Smart-API/issues"
+  },
+  "homepage": "https://github.com/ByPassaRe/Pick-a-Park-Smart-API#readme"
+}
