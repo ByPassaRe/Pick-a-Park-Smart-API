@@ -3,7 +3,7 @@ const UserRepository = require('./user.repository');
 exports.register = async (req, res) => {
   try {
     const savedUser = await UserRepository.saveUser(req.body);
-    res.send(savedUser);
+    res.status(201).send(savedUser);
   } catch (err) {
     res.sendStatus(409);
   }

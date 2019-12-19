@@ -5,7 +5,7 @@ const ParkingSpotRepository = require('./parkingSpot.repository');
 exports.register = async (req, res) => {
   try {
     const savedParkingSpot = await ParkingSpotRepository.saveParkingSpot(req.body);
-    res.send(savedParkingSpot);
+    res.status(201).send(savedParkingSpot);
   } catch (err) {
     res.sendStatus(409);
   }
