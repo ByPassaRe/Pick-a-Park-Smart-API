@@ -15,7 +15,7 @@ exports.getAll = async (req, res) => {
 
 exports.delete = async (req, res) => {
   try {
-    await UserRepository.deleteUser(req.params.username);
+    await UserRepository.deleteUser(req.body.username);
     res.sendStatus(200);
   } catch (err) {
     res.sendStatus(404);

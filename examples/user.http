@@ -2,8 +2,6 @@
 
 @baseurl = http://localhost:3000
 
-GET {{baseurl}}/ HTTP/1.1
-
 ###
 
 POST {{baseurl}}/users HTTP/1.1
@@ -22,7 +20,12 @@ GET {{baseurl}}/users HTTP/1.1
 
 ###
 
-DELETE {{baseurl}}/users/corrado.petrelli HTTP/1.1
+DELETE {{baseurl}}/users HTTP/1.1
+content-type: application/json
+
+{
+    "username":"corrado.petrelli"
+}
 
 ###
 

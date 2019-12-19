@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
+mongoose.set('useCreateIndex', true);
+
 const userRoute = require('./user/user.router');
 
 const app = express();
