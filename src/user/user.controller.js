@@ -25,8 +25,13 @@ exports.delete = async (req, res) => {
 exports.update = async (req, res) => {
   try {
     await UserRepository.updateUser(req.body);
-    res.sendStatus(200);
+    return res.sendStatus(200);
   } catch (err) {
-    res.sendStatus(500);
+    if (err.message === 'Invalid data provided') {
+      return res.sendStatus(400);
+    } if (err.message === 'User not found') {
+      return res.sendStatus(404);
+    }
+    return res.sendStatus(500);
   }
 };
