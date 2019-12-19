@@ -8,8 +8,8 @@ const logger = require('./utils/logger');
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 
-const userRoute = require('./routes/user/user.router');
-const parkingSpotRoute = require('./routes/parkingSpot/parkingSpot.router');
+const userRoute = require('./routes/user');
+const parkingSpotRoute = require('./routes/parkingSpot');
 
 const app = express();
 app.use(helmet());
