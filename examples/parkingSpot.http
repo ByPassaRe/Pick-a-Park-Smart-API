@@ -1,0 +1,29 @@
+@baseurl = http://localhost:3000/parkingSpots
+
+###
+
+POST {{baseurl}}/ HTTP/1.1
+content-type: application/json
+
+{
+    "latitude": 76.0999123,
+    "longitude": 88.03131,
+    "handicapped": false,
+    "presence": false
+}
+
+### 
+GET {{baseurl}}/ HTTP/1.1
+
+###
+
+DELETE {{baseurl}}/5dfb58a1b8595c563d457c80 HTTP/1.1
+
+###
+
+PUT {{baseurl}}/5dfb5847a8294c51ad20226c HTTP/1.1
+content-type: application/json
+
+{
+    "latitude": 50.0
+}

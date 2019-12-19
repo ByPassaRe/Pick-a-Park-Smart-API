@@ -4,7 +4,7 @@ const ParkingSpotSchema = new mongoose.Schema({
   presence: Boolean,
   latitude: Number,
   longitude: Number,
-  hadicapped: Boolean,
+  handicapped: Boolean,
 });
 
 module.exports = mongoose.model('ParkingSpot', ParkingSpotSchema);

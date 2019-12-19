@@ -6,11 +6,13 @@ const helmet = require('helmet');
 mongoose.set('useCreateIndex', true);
 
 const userRoute = require('./user/user.router');
+const parkingSpotRoute = require('./parkingSpot/parkingSpot.router');
 
 const app = express();
 app.use(helmet());
 app.use(bodyParser.json());
 app.use('/users', userRoute);
+app.use('/parkingSpots', parkingSpotRoute);
 
 mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true });
 
