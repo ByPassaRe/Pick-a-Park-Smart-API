@@ -26,8 +26,12 @@ exports.delete = async (req, res) => {
 
 exports.update = async (req, res) => {
   try {
-    await ParkingSpotRepository.updateParkingSpot(req.params.id, req.body);
-    res.sendStatus(200);
+    const updated = await ParkingSpotRepository.updateParkingSpot(req.params.id, req.body);
+    if (updated) {
+      res.sendStatus(200);
+    } else {
+      res.sendStatus(404);
+    }
   } catch (err) {
     res.sendStatus(500);
   }
