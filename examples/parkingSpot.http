@@ -29,6 +29,14 @@ content-type: application/json
 }
 
 ###
+PUT {{baseurl}}/5dfb78bd953f956f44cc51c8/hourlyPrice HTTP/1.1
+content-type: application/json
+
+{
+    "hourlyPrice": 12
+}
+
+###
 
 GET {{baseurl}}/nearest HTTP/1.1
 content-type: application/json

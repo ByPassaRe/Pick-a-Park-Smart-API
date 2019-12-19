@@ -72,3 +72,16 @@ exports.setPresence = async (req, res) => {
     res.sendStatus(500);
   }
 };
+
+exports.setHourlyPrice = async (req, res) => {
+  const updateRequest = {
+    hourlyPrice: req.body.hourlyPrice,
+  };
+
+  try {
+    await ParkingSpotRepository.updateParkingSpot(req.params.id, updateRequest);
+    res.sendStatus(200);
+  } catch (err) {
+    res.sendStatus(500);
+  }
+};
