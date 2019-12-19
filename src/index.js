@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 
 const userRoute = require('./user/user.router');
 const parkingSpotRoute = require('./parkingSpot/parkingSpot.router');

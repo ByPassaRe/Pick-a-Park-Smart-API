@@ -55,3 +55,16 @@ exports.getNearest = async (req, res) => {
 
   return res.send(nearestParkingSpot);
 };
+
+exports.setPresence = async (req, res) => {
+  const updateRequest = {
+    presence: req.body.presence,
+  };
+
+  try {
+    await ParkingSpotRepository.updateParkingSpot(req.params.id, updateRequest);
+    res.sendStatus(200);
+  } catch (err) {
+    res.sendStatus(500);
+  }
+};
