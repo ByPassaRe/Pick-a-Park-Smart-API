@@ -9,5 +9,6 @@ router.delete('/:id', ParkingSpotController.delete);
 router.put('/:id', ParkingSpotController.update);
 router.put('/:id/presence', ParkingSpotController.setPresence);
 router.get('/nearest', ParkingSpotController.getNearest);
+router.put('/:id/hourlyPrice', ParkingSpotController.setHourlyPrice);
 
 module.exports = router;
