@@ -1,7 +1,8 @@
 require('./user.model');
-
+const jwt = require('jsonwebtoken');
 const moongose = require('mongoose');
 const argon2 = require('argon2');
+const key = require('../../utils/key');
 
 const User = moongose.model('User');
 
@@ -47,4 +48,28 @@ exports.updateUser = async (data) => {
   if (result.n === 0) {
     throw new Error('User not found');
   }
+};
+
+
+exports.generateAuthToken = async (user) => {
+  const token = jwt.sign(
+    {
+      username: user.username,
+    },
+    key.TOKEN_KEY,
+    {
+      expiresIn: '24h',
+    },
+  );
+  return token;
+};
+
+exports.getUserByUsername = async (username) => {
+  const user = await User.findOne({ username });
+  return user;
+};
+
+exports.isPasswordMatch = async (hashedPassword, plainPassword) => {
+  const isPasswordMatch = await argon2.verify(hashedPassword, plainPassword);
+  return isPasswordMatch;
 };
