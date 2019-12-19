@@ -6,10 +6,10 @@ POST {{baseurl}}/ HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Corrado",
-    "lastName": "Petrelli",
-    "username": "corrado.petrelli",
-    "password": "aldoaldoaldo"
+    "firstName": "Test",
+    "lastName": "User",
+    "username": "test.user",
+    "password": "testpassword"
 }
 
 ### 
