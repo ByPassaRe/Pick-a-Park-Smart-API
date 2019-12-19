@@ -30,3 +30,7 @@ exports.update = async (req, res) => {
     res.sendStatus(500);
   }
 };
+
+exports.getNearest = async (req, res) => {
+  res.sendStatus(501);
+};

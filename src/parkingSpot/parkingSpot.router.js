@@ -7,5 +7,6 @@ router.get('/', ParkingSpotController.getAll);
 router.post('/', ParkingSpotController.register);
 router.delete('/:id', ParkingSpotController.delete);
 router.put('/:id', ParkingSpotController.update);
+router.get('/nearest', ParkingSpotController.getNearest);
 
 module.exports = router;

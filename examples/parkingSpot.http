@@ -27,3 +27,7 @@ content-type: application/json
 {
     "latitude": 50.0
 }
+
+###
+
+GET {{baseurl}}/nearest HTTP/1.1
