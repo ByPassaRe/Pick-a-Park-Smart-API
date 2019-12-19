@@ -11,7 +11,6 @@ const app = express();
 app.use(helmet());
 app.use(bodyParser.json());
 app.use('/users', userRoute);
-app.get('/', (req, res) => res.send('Hello World!'));
 
 mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true });
 
