@@ -29,6 +29,11 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     default: 0.0,
   },
+  role: {
+    type: String,
+    enum: ['DRIVER', 'MUNICIPALLY', 'MUNICIPALLY_POLICE', 'PARKING_COMPANY'],
+    default: 'DRIVER',
+  },
 });
 
 module.exports = mongoose.model('User', UserSchema);
