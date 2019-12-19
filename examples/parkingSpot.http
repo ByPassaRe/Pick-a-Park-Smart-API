@@ -29,7 +29,7 @@ content-type: application/json
 }
 
 ###
-PUT {{baseurl}}/5dfb78bd953f956f44cc51c8/hourlyPrice HTTP/1.1
+PUT {{baseurl}}/5dfba5d6d2e371302b98d1e6/hourlyPrice HTTP/1.1
 content-type: application/json
 
 {
