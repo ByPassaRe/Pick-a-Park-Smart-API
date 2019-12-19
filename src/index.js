@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 
+const logger = require('./utils/logger');
+
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 
@@ -15,13 +17,16 @@ app.use(bodyParser.json());
 app.use('/users', userRoute);
 app.use('/parkingSpots', parkingSpotRoute);
 
-mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true });
+logger.info('Connecting to database ...');
 
-const db = mongoose.connection;
+mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true, useUnifiedTopology: true })
+  .catch((err) => {
+    logger.error(err);
+    process.exit(1);
+  })
+  .then(() => {
+    logger.info('Connected to database');
 
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('Connected to database');
-  app.listen(3000);
-  console.log('App listening on port 3000');
-});
+    app.listen(3000);
+    logger.info('App listening on port 3000');
+  });

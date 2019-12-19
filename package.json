@@ -25,7 +25,8 @@
     "express": "^4.17.1",
     "geolib": "^3.2.0",
     "helmet": "^3.21.2",
-    "mongoose": "^5.8.1"
+    "mongoose": "^5.8.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
