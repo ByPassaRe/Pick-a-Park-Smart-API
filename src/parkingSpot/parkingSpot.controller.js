@@ -1,3 +1,5 @@
+const geolib = require('geolib');
+
 const ParkingSpotRepository = require('./parkingSpot.repository');
 
 exports.register = async (req, res) => {
@@ -32,5 +34,24 @@ exports.update = async (req, res) => {
 };
 
 exports.getNearest = async (req, res) => {
-  res.sendStatus(501);
+  const targetPosition = {
+    latitude: req.body.latitude,
+    longitude: req.body.longitude,
+  };
+
+  const parkingSpots = await ParkingSpotRepository.getAll();
+
+  const nearestParkingSpot = parkingSpots.map((parkingSpot) => {
+    const parkingSpotLocation = {
+      latitude: parkingSpot.latitude,
+      longitude: parkingSpot.longitude,
+    };
+
+    const distance = geolib.getDistance(targetPosition, parkingSpotLocation);
+
+    return { distance, parkingSpot };
+  }).reduce((nearest, current) => (nearest.distance < current.distance ? nearest : current));
+
+
+  return res.send(nearestParkingSpot);
 };

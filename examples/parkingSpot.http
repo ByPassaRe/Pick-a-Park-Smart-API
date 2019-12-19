@@ -31,3 +31,9 @@ content-type: application/json
 ###
 
 GET {{baseurl}}/nearest HTTP/1.1
+content-type: application/json
+
+{
+    "latitude": 75.0,
+    "longitude": 40.0
+}
