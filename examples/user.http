@@ -42,3 +42,33 @@ content-type: application/json
     "balance": 200,
     "password": "newpass"
 }
+
+ 
+### Esempio con Username e Password corretti
+POST {{baseurl}}/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "test.user",
+    "password": "testpassword"
+}
+
+
+### Esempio con Username sbagliato
+POST {{baseurl}}/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "test.user.NONESISTE",
+    "password": "testpassword"
+}
+
+
+### Esempio con Username corretto, Password Sbagliata
+POST {{baseurl}}/login/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "test.user",
+    "password": "testpasswordSBAGLIATA"
+}
