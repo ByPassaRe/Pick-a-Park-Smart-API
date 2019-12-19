@@ -26,3 +26,7 @@ exports.deleteUser = async (username) => {
     throw new Error('User not found');
   }
 };
+
+exports.updateUser = async (data) => {
+  await User.updateOne({ username: data.username }, data, { runValidators: true });
+};

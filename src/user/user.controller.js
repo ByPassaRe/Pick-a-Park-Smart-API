@@ -21,3 +21,12 @@ exports.delete = async (req, res) => {
     res.sendStatus(404);
   }
 };
+
+exports.update = async (req, res) => {
+  try {
+    await UserRepository.updateUser(req.body);
+    res.sendStatus(200);
+  } catch (err) {
+    res.sendStatus(500);
+  }
+};
