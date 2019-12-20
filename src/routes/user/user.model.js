@@ -31,7 +31,7 @@ const UserSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['DRIVER', 'MUNICIPALLY', 'MUNICIPALLY_POLICE', 'PARKING_COMPANY'],
+    enum: ['DRIVER', 'MUNICIPALITY', 'MUNICIPALITY_POLICE', 'PARKING_COMPANY'],
     default: 'DRIVER',
   },
 });
