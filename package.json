@@ -21,8 +21,8 @@
   "homepage": "https://github.com/ByPassaRe/Pick-a-Park-Smart-API#readme",
   "dependencies": {
     "argon2": "^0.25.1",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "geolib": "^3.2.0",
     "helmet": "^3.21.2",
     "mongoose": "^5.8.1",
